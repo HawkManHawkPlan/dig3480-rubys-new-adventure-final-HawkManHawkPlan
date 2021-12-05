@@ -8,6 +8,7 @@ public class HealthCollectible : MonoBehaviour
     public GameObject healthFX;
     public int cogs = 0;
     public bool cogObj = false;
+    public bool cogObjFarmer = false;
     void OnTriggerEnter2D(Collider2D other)
     {
         RubyController controller = other.GetComponent<RubyController>();
@@ -22,7 +23,11 @@ public class HealthCollectible : MonoBehaviour
                 Destroy(gameObject);
 
                 controller.PlaySound(collectedClip);
-
+				if (cogObjFarmer)
+				{
+                    FindObjectOfType<TheFarmer>().objInFront = false;
+                    FindObjectOfType<TheFarmer>().timeTilSpawn = FindObjectOfType<TheFarmer>().spawnCooldown;
+				}
             }
             if (cogObj == false && controller.health < controller.maxHealth)
             {

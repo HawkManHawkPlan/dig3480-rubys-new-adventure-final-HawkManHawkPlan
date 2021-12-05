@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene2.unity
     guid: 2d7c5858542b0dc4da8bdeb38711f4f1
+  - enabled: 1
+    path: Assets/Scenes/Harvest TD Crossover Test.unity
+    guid: 5c7da6892d6a502409c8225346ee0522
   m_configObjects: {}

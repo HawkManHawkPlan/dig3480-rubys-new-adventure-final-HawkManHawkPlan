@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Waypoints
+  - EndPoint
+  - Enemy
+  - CrowPoint
+  - Silo
+  - Spawner
+  - FarmerDialogue
   layers:
   - Default
   - TransparentFX
@@ -17,13 +24,13 @@ TagManager:
   - Projectile
   - Confiner
   - NPC
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Waypoint
+  - Silo Waypoint
+  - CrowWayPoint
+  - Enemy
+  - EnemyWayPoint
+  - FlyingEnemy
+  - Collectible
   - 
   - 
   - 
@@ -38,6 +45,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3041860127
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: In-Game Characters
+    uniqueID: 2005091391
     locked: 0

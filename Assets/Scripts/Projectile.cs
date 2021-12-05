@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
+    public int speed;
 
     void Awake()
     {
@@ -13,7 +14,7 @@ public class Projectile : MonoBehaviour
 
     public void Launch(Vector2 direction, float force)
     {
-        rigidbody2d.AddForce(direction * force);
+        rigidbody2d.AddForce(direction * force* speed);
     }
 
     void Update()
@@ -32,6 +33,26 @@ public class Projectile : MonoBehaviour
             e.Fix();
         }
 
+
+        Destroy(gameObject);
+    }
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.tag == "Enemy")//Add crowenemy tag
+        {
+            MoveCrow crowScript = collision.GetComponent<MoveCrow>();
+
+            if(crowScript != null)
+			{
+                crowScript.Invoke("GotJanked", 0);
+			}
+			else
+			{
+                EnemyMove enemyScript = collision.GetComponent<EnemyMove>();
+                enemyScript.Invoke("GotJanked", 0);
+			}
+            Destroy(collision.gameObject);
+        }
         Destroy(gameObject);
     }
 }

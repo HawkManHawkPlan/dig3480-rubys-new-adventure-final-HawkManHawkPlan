@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7538934063475732552}
   m_Layer: 8
   m_Name: Ruby
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   maxHealth: 5
+  cogs: 4
   projectilePrefab: {fileID: 6277829941624966645, guid: 06152f839901edc44b779c5dbd1fcfe1,
     type: 3}
   damageFX: {fileID: 4263998287640448891, guid: 7c4e74f1a3cae1e45837e6764152d1e0,
@@ -112,6 +113,7 @@ MonoBehaviour:
   dedTxt: {fileID: 0}
   winTxt: {fileID: 0}
   robotLog: {fileID: 0}
+  cogText: {fileID: 0}
   throwSound: {fileID: 8300000, guid: baf4940915b581c4295f45e99fd72d83, type: 3}
   hitSound: {fileID: 8300000, guid: 984af6652af95084c872f2a090b20bd3, type: 3}
   winSong: {fileID: 8300000, guid: 41e32d84ee17f8347954067b398cf4c8, type: 3}

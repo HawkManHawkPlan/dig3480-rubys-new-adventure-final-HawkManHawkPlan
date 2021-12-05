@@ -86,19 +86,27 @@ public class RubyController : MonoBehaviour
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
-                    
-					if (ween)
-					{
+
+                    if (ween)
+                    {
                         Debug.Log("Teleport");
                         winTxt.enabled = false;
                         ween = false;
-                        SceneManager.LoadScene(1);
+                        int activeScene = SceneManager.GetActiveScene().buildIndex;
+                        SceneManager.LoadScene(activeScene + 1);
                     }
                     else
-					{
+                    {
                         character.DisplayDialog();
                     }
                 }
+                else if (character == null && hit.collider.GetComponent<TheFarmer>() != null && hit.collider.GetComponent<TheFarmer>().spokenTo == false)
+				{
+                    TheFarmer farmerMan = hit.collider.GetComponent<TheFarmer>();
+                    Debug.Log("Magically delicious");
+                    speed = 0;
+                    farmerMan.Invoke("FarmerTalk", 0);
+				}
             }
         }
 		if (Input.GetKeyDown(KeyCode.R)&& ded || Input.GetKeyDown(KeyCode.R) && ween)
