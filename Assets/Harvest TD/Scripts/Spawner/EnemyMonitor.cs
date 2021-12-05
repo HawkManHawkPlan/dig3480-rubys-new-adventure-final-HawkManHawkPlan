@@ -17,7 +17,7 @@ public class EnemyMonitor : MonoBehaviour
     int currentNumber;
 	private void Awake()
 	{
-        currentNumber = FindObjectOfType<Spawn>().enemies.Count;
+        currentNumber = FindObjectOfType<Spawn>().enemies.Count - 8;
     }
     public void EnemyLog() //Get Spawner to invoke this after spawning last enemy in list
     {
@@ -49,7 +49,7 @@ public class EnemyMonitor : MonoBehaviour
 
     public void CheckEnemies(int subtractor)
     {
-        currentNumber -= subtractor;
+        currentNumber -= subtractor ;
         enemyCount.text = "Familiars Left: " + currentNumber;
         if (levelOn && currentNumber <= 0)
         {

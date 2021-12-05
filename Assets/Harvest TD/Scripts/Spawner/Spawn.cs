@@ -19,7 +19,7 @@ public class Spawn : MonoBehaviour
 	{
 		amEnabled = true;
 		playButton.interactable = false;
-		maxEnemies = enemies.Count;
+		maxEnemies = enemies.Count-8;
 		enemyCount.text = "Familiars Left: " + maxEnemies;
 
 	}
